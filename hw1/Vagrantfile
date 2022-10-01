@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.hostname = "vmhw1"
+  config.vm.provider :virtualbox do |vb|
+    vb.name = "vmhw1"
+  end
+  config.vm.network "forwarded_port", guest: 80, host: 8888
+  # config.vm.synced_folder "www/", "/var/www/html"
+  # config.vm.provision "file", source: "./www/index.html", destination: "/var/www/index.html"
+  config.vm.provision "shell", inline: <<-SHELL
+    yum install -y epel-release
+    yum install -y httpd
+    sudo cp /vagrant/www/index.html /var/www/html/
+    systemctl start httpd
+    systemctl enable httpd
+  SHELL
+end
