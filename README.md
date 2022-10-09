@@ -38,7 +38,7 @@ $ vagrant up
 - In your browser goto localhost:8888
 - See content placed to ~/www-content (*): 
 
-![image](https://user-images.githubusercontent.com/45174840/194770674-62af1fc9-60f5-48b2-869a-892535a7228f.png)
+![image](https://user-images.githubusercontent.com/45174840/194771682-05fed2c2-3c8e-4cbd-a098-68fa69029909.png)
 
 ## Homework 2
 
