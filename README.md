@@ -10,19 +10,27 @@ Repository of DevOps home works of the student **4CS-22** group of [Vitalii Povs
 Teacher: [Oleh Skoropad](https://github.com/sko-lv)
 
 ## Table of Contents
--
--
--
+- [Homework 1](#homework-1)
+- [Homework 2](#homework-2)
+- [Homework 3](#homework-3)
+- [Homework 4](#homework-4)
+- [Homework 5](#homework-5)
+- [Homework 6](#homework-6)
+- [Homework 7](#homework-7)
+- [Homework 8](#homework-8)
 
 ## Homework 1
 
+### Task
 - Create repo hometask1    (do not forget .gitignore)
+- Push your project to github (and add user sko-lv as colaborator)
+
+### Vagrant task
 - Create Vagrantfile 
   + Centos 7
   + Provision Nginx server 
   + Forward port 80 → 8888
   + Place site content to ~/www-content (*)
-- Push your project to github (and add user sko-lv as colaborator)
  
 Commands to install nginx on Centos
 ```
@@ -69,7 +77,22 @@ $ vagrant ssh vm1; vagrant ssh vm2
 ```
     
 ## Homework 3
+
+### Vagrant task
+- create repo hometask3
+- create VM using ubuntu/focal64 (like a hometask2)
+- configure cron job (/etc/cron.d/…) which write every minute on workdays (Mon-Fri) next information to log file /var/log/sysinfo :
+  + current system time and date;   (use date command)
+  + system uptime, logged-in users and CPU load;  (use w command)
+  + memory usage and disk space usage;  (use free -m and df -h )
+  + list of programs used open TCP ports; (ss -tulpn)
+  + check connection to ukr.net host; (ping find options for command) 
+  + list of SUID programs in local system. (find  see options in man) 
+	
+> Tips: best way is to create script /root/sysinfo.sh ran by cron job. Do not forget make your script executable (use chmod).
+
 ## Homework 4
 ## Homework 5
 ## Homework 6
 ## Homework 7
+## Homework 8
