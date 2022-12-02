@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.define "hw5" do |hw5|
+    hw5.vm.hostname = "hw5"
+    hw5.vm.box = "ubuntu/focal64"
+    hw5.vm.provision "file", source: "move_files.service", destination: "~/move_files.service"
+  
+    config.vm.provision "shell", path: "provision.sh"
+  end
+end
