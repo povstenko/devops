@@ -10,13 +10,13 @@ sudo vgcreate vg02 /dev/sdd /dev/sde
 # Write provision script to configure 2 LVM volumes (each 600MB)
 sudo lvcreate -n vol1 -l+100%FREE vg01
 sudo lvcreate -n vol2 -l+100%FREE vg02
-# 2
+
 sudo mkfs.ext4 /dev/vg01/vol1
 sudo mkfs.ext4 /dev/vg02/vol2
-# 3
+
 sudo blkid /dev/vg01/vol1
 sudo blkid /dev/vg02/vol2
-# 4
+
 sudo mkdir /mnt/vol1
 sudo mkdir /mnt/vol2
 
